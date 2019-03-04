@@ -1,0 +1,19 @@
+{
+    "name": "maycowa/forge",
+    "description": "A library for handling types as objects.",
+    "type": "library",
+    "license": "GPL",
+    "authors": [
+        {
+            "name": "Maycow Antunes",
+            "email": "maycowantunes@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Forge\\": "src/Forge/"
+        }
+    },
+    "require": {}
+}

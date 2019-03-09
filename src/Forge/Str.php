@@ -5,11 +5,11 @@
 namespace Forge;
 
 /**
- * Class StringType
+ * Class Str
  * @package Forge
  * @author Maycow Antunes
  */
-class StringType
+class Str
 {
     /**
      * @var string|null
@@ -17,18 +17,18 @@ class StringType
     public $value;
 
     /**
-     * StringType constructor.
+     * Str constructor.
      * @param string|null $value
      */
     public function __construct(?string $value)
-    {
+    {//
         $this->value = $value;
     }
 
     /**
      * Creates a StringType object with passed value
      * @param string|null $value
-     * @return StringType
+     * @return Str
      */
     public static function val(?string $value): self
     {
@@ -57,5 +57,34 @@ class StringType
     public function replace($search, $replace, ?int &$count = null): ?string
     {
         return str_replace($search, $replace, $this->value, $count);
+    }
+
+    /**
+     * Split a string by string
+     * @link https://php.net/manual/en/function.explode.php
+     * @param string $delimiter The boundary string.
+     * @param int $limit [optional] <p>
+     * If limit is set and positive, the returned array will contain
+     * a maximum of limit elements with the last
+     * element containing the rest of string.
+     * </p>
+     * <p>
+     * If the limit parameter is negative, all components
+     * except the last -limit are returned.
+     * </p>
+     * <p>
+     * If the limit parameter is zero, then this is treated as 1.
+     * </p>
+     * @return array If delimiter is an empty string (""),
+     * explode will return false.
+     * If delimiter contains a value that is not
+     * contained in string and a negative
+     * limit is used, then an empty array will be
+     * returned. For any other limit, an array containing
+     * string will be returned.
+     */
+    public function explode(string $delimiter, int $limit = null)
+    {
+        return explode($delimiter, $this->value, $limit);
     }
 }
